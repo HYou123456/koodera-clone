@@ -1,0 +1,23 @@
+@import "../../Styles/Variables.scss";
+
+.button__top {
+  position: fixed;
+  bottom: 20px;
+  right: 14px;
+  z-index: 1000;
+  font-size: 50px;
+  color: $color__white;
+  width: fit-content;
+  background-color: $main__color;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+  transform: translateX(calc(100% + 14px));
+  &.show {
+    transform: translateX(0);
+  }
+}

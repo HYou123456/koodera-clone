@@ -1,0 +1,104 @@
+@import "../../Styles/Variables.scss";
+
+.services__section {
+  background-image: url("../../../public/assets/servicebg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.7;
+  }
+  .container {
+    position: relative;
+    z-index: 1;
+    .section__title {
+      color: #fff;
+      text-align: center;
+    }
+    .services__content {
+      display: grid;
+      // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-bottom: 35px;
+      li,
+      .services__item {
+        position: relative;
+        padding: 20px 10px;
+        background-color: #abbbc02f;
+        backdrop-filter: blur(10px);
+        color: $color__white;
+        font-size: $ft__18;
+        display: flex;
+        min-height: 110px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        line-height: 28px;
+        overflow: hidden;
+        border-radius: 4px;
+        text-transform: capitalize;
+        @media (min-width: 1600px) {
+          font-size: $ft__22;
+        }
+        span {
+          position: absolute;
+          top: 3px;
+          left: 10px;
+          &:lang(ar) {
+            left: auto;
+            right: 10px;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: -40px;
+          left: -40px;
+          width: 80px;
+          height: 80px;
+          background-color: $main__color;
+          border-radius: 50%;
+          z-index: -1;
+          transition: 1s ease-in-out;
+        }
+        &:lang(ar) {
+          &::after {
+            left: auto;
+            right: -40px;
+          }
+          &:hover {
+            &::after {
+              right: 0;
+            }
+          }
+        }
+        &:hover {
+          &::after {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+      @media (max-width: 991px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+    }
+    .sec__button {
+      margin: 0 auto;
+      width: fit-content;
+    }
+  }
+}

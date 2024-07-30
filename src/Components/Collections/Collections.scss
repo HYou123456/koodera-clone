@@ -1,0 +1,21 @@
+.collection__section {
+  padding: 0 4px;
+  .section__title {
+    text-align: center;
+  }
+  .collection__content {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+    gap: 4px;
+    @media (max-width: 991px) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+    }
+  }
+  .sec__button {
+    margin: 0 auto;
+    cursor: pointer;
+    width: fit-content;
+  }
+}

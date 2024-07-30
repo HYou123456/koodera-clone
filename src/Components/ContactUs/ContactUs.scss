@@ -1,0 +1,131 @@
+@import "../../Styles/Variables.scss";
+
+.contact__section {
+  position: relative;
+  overflow: hidden;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 38%;
+    height: 100%;
+    background-color: #075e54;
+  }
+  &::before {
+    left: auto;
+    right: 0;
+    background-color: $black__color;
+    width: 62%;
+    backdrop-filter: brigthness(0.5);
+    background-image: url("../../../public/assets/contact.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: brigthess(0.5);
+  }
+  .container {
+    position: relative;
+    z-index: 1;
+    .section__title {
+      text-align: center;
+      color: $color__white;
+    }
+    .contact__content {
+      display: flex;
+      justify-content: space-between;
+      .left {
+        flex-basis: 40%;
+        .section__title {
+          text-align: left;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+        }
+        img {
+          max-width: 100%;
+          width: 350px;
+          border-radius: 4px;
+          margin-bottom: 20px;
+        }
+        button {
+          background-color: #fff;
+          color: #075e54;
+          padding: 14px 18px;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          font-size: 22px;
+          font-weight: $ft__W__M;
+          .icon {
+            font-size: 20px;
+          }
+          transition: 0.3s ease-in-out;
+          &:hover {
+            background-color: #25d366;
+            color: #fff;
+          }
+        }
+      }
+      .rigth {
+        flex-basis: 60%;
+        .section__title {
+          text-align: left;
+          display: flex;
+          align-items: center;
+          gap: 14px;
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          flex: 1;
+          .main__button {
+            background-color: $main__color;
+            &:focus,
+            &:hover {
+              background-color: $black__color;
+            }
+          }
+          > div {
+            position: relative;
+            flex: 1;
+            display: flex;
+            .icon {
+              position: absolute;
+              top: 50%;
+              left: 0;
+              width: 40px;
+              font-size: 20px;
+              display: flex;
+              transform: translateY(-50%);
+              color: $color__white;
+            }
+          }
+          textarea,
+          input {
+            all: unset;
+            background-color: $color__white;
+            min-height: 50px;
+            padding: 0 10px;
+            border-radius: 4px;
+            border: 2px solid $main__color;
+            border-left-width: 40px;
+            width: 100%;
+            &:focus {
+              border-color: $black__color;
+            }
+          }
+          textarea {
+            padding-top: 20px;
+            min-height: 150px;
+            border: 2px solid $main__color;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}

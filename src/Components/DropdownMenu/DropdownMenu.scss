@@ -1,0 +1,61 @@
+@import "../../Styles/Variables.scss";
+
+.dropdown__button {
+  z-index: 10;
+  .drop__icon {
+    transition: transform 0.3s ease-in-out;
+    font-size: 20px;
+    margin-left: 3px;
+  }
+  .dropdown__menu {
+    position: absolute;
+    top: 180%;
+    background-color: #fff;
+    transition: 0.3s ease-in-out;
+    opacity: 0;
+    max-height: 220px;
+    width: 120px;
+    transform: translateX(-50%);
+    left: 50%;
+    padding: 20px;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    box-shadow: 0px 0px 9px 0px #0000001f;
+    border-radius: 4px;
+    &.show {
+      opacity: 1;
+    }
+    .dropdown__link {
+      color: $black__color;
+      font-size: 14px;
+      font-weight: $ft__W__R;
+      position: relative;
+      transition: 0.3s ease-in-out;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: $main__color;
+        transform: translateY(-50%);
+        transition: 0.3s ease-in-out;
+      }
+      &:hover {
+        padding-left: 24px;
+        color: $main__color;
+        &::after {
+          width: 20px;
+        }
+      }
+    }
+  }
+  &:hover {
+    .drop__icon {
+      transform: rotate(180deg);
+    }
+  }
+}

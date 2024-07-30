@@ -1,0 +1,61 @@
+@import "../../Styles/Variables.scss";
+
+.our__works__page {
+  overflow: hidden;
+  padding-top: 150px !important;
+  .our__works__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 80px;
+    .section__title {
+      margin-bottom: 0;
+    }
+    .our__works__filter {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      overflow: hidden;
+      border-radius: 10px;
+      button {
+        background-color: $main__color;
+        color: $color__white;
+        padding: 10px 20px;
+        opacity: 0.7;
+        transition: 0.6s ease-in-out;
+        &:not(:last-child) {
+          border-right: 2px solid $color__white;
+          &:lang(ar) {
+            border-right: 0px solid $color__white;
+            border-left: 2px solid $color__white;
+          }
+        }
+        &.active {
+          background-color: $main__color;
+          color: $color__white;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .some__project__container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-bottom: 0px;
+  }
+  .main__button {
+    width: fit-content;
+    margin: 35px auto 0;
+    cursor: pointer;
+    width: 140px;
+  }
+}
+@media (max-width: 991px) {
+  .our__works__page {
+    .our__works__header {
+      flex-direction: column;
+    }
+  }
+}
